@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+.aside {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+}
+
+.aside__container {
+  width: 270px;
+  height: 100%;
+  position: absolute;
+  right: -270px;
+  background-color: rgba(0, 0, 0, 0.527);
+  transition: all 0.3s ease-out;
+}
+
+.asideAni {
+  right: 0px;
+}
+
+.aside__btn {
+  height: 70px;
+  width: 40px;
+  position: absolute;
+  top: 50%;
+  left: -20%;
+  background-color: transparent;
+  border: none;
+  font-size: 35px;
+  font-weight: bold;
+  color: #fff;
+  transform: scaleY(1.5);
+}
+
+.aside__list {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+}
+
+.aside__list--link {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+
+}
