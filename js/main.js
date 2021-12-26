@@ -3,9 +3,9 @@ $(document).ready(function () {
   var p2 = Math.floor($("#aboutId").offset().top) - 200;
   var p3 = Math.floor($("#servicesId").offset().top);
   var p4 = Math.floor($("#clientsId").offset().top);
-  var p5 = Math.floor($("#portfolioId").offset().top);
-  var p6 = Math.floor($("#blogId").offset().top);
-  var p7 = Math.floor($("#contactId").offset().top);
+  var p5 = Math.floor($("#portfolioId").offset().top) - 600;
+  var p6 = Math.floor($("#blogId").offset().top) - 600;
+  var p7 = Math.floor($("#contactId").offset().top) - 600;
   var p = [p1, p2, p3, p4, p5, p6, p7];
 
   // 검사기를 켰다가 끄는 등의 페이지 크기를 변동시킬 수 있는 상황 후에 위치값 재조정을 위해 resize 추가
@@ -14,9 +14,9 @@ $(document).ready(function () {
     p2 = Math.floor($("#aboutId").offset().top) - 200;
     p3 = Math.floor($("#servicesId").offset().top);
     p4 = Math.floor($("#clientsId").offset().top);
-    p5 = Math.floor($("#portfolioId").offset().top);
-    p6 = Math.floor($("#blogId").offset().top);
-    p7 = Math.floor($("#contactId").offset().top);
+    var p5 = Math.floor($("#portfolioId").offset().top) - 600;
+    var p6 = Math.floor($("#blogId").offset().top) - 600;
+    var p7 = Math.floor($("#contactId").offset().top) - 600;
     p = [p1, p2, p3, p4, p5, p6, p7];
   });
 
