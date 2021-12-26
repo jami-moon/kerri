@@ -287,13 +287,13 @@
   letter-spacing: 0.1px;
 }
 
-.hireMe__content {
+.hire__content {
   text-align: center;
   font-size: 40px;
   margin-bottom: 40px;
 }
 
-.hireMe__btn {
+.hire__btn {
   display: block;
   margin: 0 auto 100px;
   padding: 15px 35px;
@@ -355,7 +355,7 @@
 }
 
 .clients__speak {
-  max-width: 700px;
+  max-width: 500px;
   text-align: center;
   font-style: italic;
   color: #6c757d;
@@ -367,37 +367,40 @@
   font-weight: 700;
 }
 
-.clients__listWrapper {
-  width: 1140px;
-  height: 350px;
-  position: relative;
-  overflow: hidden;
-}
-
 .clients__listBox {
-  width: 400%;
-  display: flex;
-  flex-flow: row nowrap;
-  position: absolute;
-  left: 0;
+  width: 50%;
+  margin-bottom: 50px;
 }
 
 .clients__list {
-  width: 100%;
-  display: flex;
-  flex-flow: column nowrap;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
-.clients__control {
-  display: inline-block;
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.slick-dots li {
+  margin: 0 10px;
+}
+
+.slick-dots button {
+  display: block;
   width: 40px;
   height: 15px;
   cursor: pointer;
   background-color: #e65f78;
+  border: 0;
+  outline: 0;
+  text-indent: -9999px;
 }
 
-.clients__control--action {
+.slick-dots li.slick-active button {
   background-color: #d30202;
 }
 
@@ -608,12 +611,8 @@
 }
 
 .blog__list--time {
+  letter-spacing: 0.1em;
   color: #6c757d;
-}
-
-.blog__list--time strong {
-  color: #e65f78;
-  margin-left: 10px;
 }
 
 .blog__list--content {

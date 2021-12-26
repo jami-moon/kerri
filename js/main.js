@@ -7,13 +7,7 @@ $(document).ready(function () {
   var p6 = Math.floor($("#blogId").offset().top);
   var p7 = Math.floor($("#contactId").offset().top);
   var p = [p1, p2, p3, p4, p5, p6, p7];
-  console.log("타이틀위치값:" + p1);
-  console.log("about위치값:" + p2);
-  console.log("service위치값:" + p3);
-  console.log("client위치값:" + p4);
-  console.log("portfolio위치값:" + p5);
-  console.log("blog위치값:" + p6);
-  console.log("contact위치값:" + p7);
+
   // 검사기를 켰다가 끄는 등의 페이지 크기를 변동시킬 수 있는 상황 후에 위치값 재조정을 위해 resize 추가
   $(window).resize(function () {
     p1 = Math.floor($("#titleId").offset().top);
@@ -24,14 +18,8 @@ $(document).ready(function () {
     p6 = Math.floor($("#blogId").offset().top);
     p7 = Math.floor($("#contactId").offset().top);
     p = [p1, p2, p3, p4, p5, p6, p7];
-    console.log("resize title위치값" + p1);
-    console.log("resize about위치값" + p2);
-    console.log("resize service위치값" + p3);
-    console.log("resize client위치값" + p4);
-    console.log("resize portfolio위치값" + p5);
-    console.log("resize blog위치값" + p6);
-    console.log("resize contact위치값" + p7);
   });
+
   // 스크롤시 헤더 배경색 및 크기 변경
   $(window).scroll(function () {
     $(window).scrollTop() >= 100
@@ -43,6 +31,7 @@ $(document).ready(function () {
   if ($(window).scrollTop() >= 100) {
     $(".navbar__container").addClass("navbar__container--scroll");
   }
+
   // 스크롤시 각 섹션의 위치 값에 맞게 메뉴 링크 색상 변경
   $(window).scroll(function () {
     var a = $(window).scrollTop();
@@ -88,6 +77,7 @@ $(document).ready(function () {
       left: "calc(50% - " + sLeft + "px)",
       top: "calc(50% - " + sTop + "px)",
     });
+
     // 스크롤이벤트시 service li분산이동
     var k;
     var m;
@@ -106,7 +96,6 @@ $(document).ready(function () {
           m++;
           if (m == 6) {
             $(document).off("scroll");
-            //  $(window).off("scroll");
           }
         });
       }
@@ -136,6 +125,7 @@ $(document).ready(function () {
       500
     );
   });
+
   // 이미지 클릭시 팝업요소 삽입 및 이미지 src 변수 설정하여 삽입 + 닫기
   $(".portfolio").append("<div class='portfolio__popup'></div>");
   $(".portfolio__popup").hide();
@@ -178,98 +168,22 @@ $(document).ready(function () {
     return false;
   });
 
-  // aside 메뉴창 열고 닫기
-  var b;
-  b = 0;
-  $(".aside__btn").click(function () {
-    $(".aside__container").toggleClass("asideAni");
-    if (b == 0) {
-      $(this).children("span").text(">");
-      b = 1;
-    } else {
-      $(this).children("span").text("<");
-      b = 0;
-    }
+  // clients 슬라이드 - slick
+  $(".clients__listBox").slick({
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 1000,
+    arrows: false,
+    speed: 300,
+    slidesToShow: 1,
+    dots: true,
   });
 
-  // clients 슬라이드 시작
-  var e;
-  e = 1;
-  // 1231 구조를 위해 하나 복제
-  $(".clients__list").first().clone().appendTo(".clients__listBox");
-  // 세번째 요소까지 박스를 왼쪽으로 100% 씩 당기며 보여주기
-  function autoslide() {
-    if (e < 3) {
-      $(".clients__listBox")
-        .stop()
-        .animate({ left: -100 * e + "%" }, 500);
-      $(".clients__controlBox li:eq(" + e + ")").addClass(
-        "clients__control--action"
-      );
-      $(".clients__controlBox li:eq(" + e + ")")
-        .siblings()
-        .removeClass("clients__control--action");
-      e++;
-    }
-    // 복제한 4번째 요소에 도착했을 때 4번째 표시닷이 없으므로 1번째가 켜지게끔 만들기
-    else if (e == 3) {
-      $(".clients__listBox")
-        .stop()
-        .animate({ left: -100 * e + "%" }, 500);
-      $(".clients__controlBox li:eq(0)").addClass("clients__control--action");
-      $(".clients__controlBox li:eq(0)")
-        .siblings()
-        .removeClass("clients__control--action");
-      e++;
-    }
-    // 4번째 요소가 놓인 상태에서 박스 전체를 원위치로 돌려놓기 (4번과 1번 요소가 똑같기 때문에 바꿔치기 되는 것이 보이지 않음)
-    else if (e == 4) {
-      e = 1;
-      setTimeout(autoslide, 0);
-      $(".clients__listBox").css("left", "0%");
-      $(".clients__controlBox li:eq(" + e + ")").addClass(
-        "clients__control--action"
-      );
-      $(".clients__controlBox li:eq(" + e + ")")
-        .siblings()
-        .removeClass("clients__control--action");
-    }
-  }
-
-  var startInterval = setInterval(autoslide, 3000);
-
-  function stopInterval() {
-    clearInterval(startInterval);
-  }
-
-  function restart() {
-    e = 3;
-    startInterval = setInterval(autoslide, 3000);
-  }
-
-  // clients 버튼 컨트롤
-  var c;
-  $(".clients__control").click(function () {
-    stopInterval(); // 버튼 클릭할 때 진행중인 interval 과 충돌이 있으므로 일단 정지
-    $(".clients__control").removeClass("clients__control--action");
-    $(this).addClass("clients__control--action");
-    c = $(this).attr("data-cn"); // 버튼 데이터 값에 따라 list 가져오기
-    $(".clients__listBox").animate(
-      {
-        left: -100 * c + "%",
-      },
-      500
-    );
-    setTimeout(restart, 500); // 클릭한 화면에서 지연시간 1초 뒤 다시 슬라이드
-  });
-  // clients 슬라이드 종료
-
-  // portfolio 이미지 재정렬과 트랜지션을 위해 position으로 위치 지정 ------------------------------------------
+  // portfolio 이미지 재정렬과 트랜지션을 위해 position으로 위치 지정
   var portL;
   var portT;
   var f, g, h, i;
 
-  // $(".portfolio__photoListBox").css("height", list_imgH); // 이미지 ul 높이 지정
   // 이미지 위치값 지정
   h = 0;
   i = 0;

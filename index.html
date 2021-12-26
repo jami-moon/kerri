@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,24 +10,24 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css"
     />
+    <!-- slick CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
     <!-- CSS -->
     <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/layout.css" />
-    <link rel="stylesheet" href="./css/aside.css" />
     <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/footer.css" />
-    <!-- jquery JS -->
-    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- JS -->
-    <script defer src="./js/main.js"></script>
   </head>
-
   <body>
     <!-- 상단영역 -->
     <header class="navbar">
       <div class="navbar__container">
         <h1 class="navbar__logo">
-          <a href="#" class="navbar__logo--link">Kerri</a>
+          <a href="#none" class="navbar__logo--link">Kerri</a>
         </h1>
         <nav>
           <ul class="navbar__gnb">
@@ -80,13 +80,18 @@
         <div class="title__wheel indent">아래보기</div>
       </div>
     </div>
+    <!-- 메인영역 -->
     <main>
       <!-- about -->
       <section id="aboutId" class="about section">
         <div class="about__container">
           <div class="about__container--left">
             <figure class="about__figure">
-              <img src="./img/about.jpg" alt="" class="about__img" />
+              <img
+                src="./img/about.jpg"
+                alt="어바웃 이미지"
+                class="about__img"
+              />
             </figure>
           </div>
           <div class="about__container--right">
@@ -115,7 +120,7 @@
             </p>
             <ul class="about__contact">
               <li>
-                <a href="">
+                <a href="#none">
                   <ion-icon
                     name="logo-dribbble"
                     class="about__contact--icon"
@@ -124,7 +129,7 @@
                 </a>
               </li>
               <li>
-                <a href="">
+                <a href="#none">
                   <ion-icon
                     name="logo-facebook"
                     class="about__contact--icon"
@@ -133,7 +138,7 @@
                 </a>
               </li>
               <li>
-                <a href="">
+                <a href="#none">
                   <ion-icon
                     name="logo-linkedin"
                     class="about__contact--icon"
@@ -142,7 +147,7 @@
                 </a>
               </li>
               <li>
-                <a href="">
+                <a href="#none">
                   <ion-icon
                     name="logo-twitter"
                     class="about__contact--icon"
@@ -159,7 +164,7 @@
         <div class="services__container">
           <h2 class="services__name">
             Our
-            <storng class="services__name--strong">Services</storng>
+            <span class="services__name--strong">Services</span>
           </h2>
           <p class="services__content">
             It is a long established fact that a reader will be of a page when
@@ -235,9 +240,9 @@
           </ul>
         </div>
       </section>
-      <!-- hireMe -->
-      <p class="hireMe__content">I Am Available For Freelancer.</p>
-      <button type="button" class="hireMe__btn">HIRE ME!</button>
+      <!-- hire -->
+      <p class="hire__content">I Am Available For Freelancer.</p>
+      <button type="button" class="hire__btn">HIRE ME!</button>
       <!-- clients-->
       <section id="clientsId" class="clients section">
         <div class="clients__container">
@@ -249,72 +254,59 @@
             It is a long established fact that a reader will be of a page when
             established fact looking at its layout.
           </p>
-          <div class="clients__listWrapper">
-            <div class="clients__listBox">
-              <div class="clients__list">
-                <ion-icon
-                  name="chatbubbles-outline"
-                  class="clients__icon"
-                ></ion-icon>
-                <img src="./img/testi-1.jpg" alt="img" class="clients__img" />
-                <p class="clients__speak">
-                  "Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Reprehenderit cum labore necessitatibus adipisci ea
-                  voluptates. Voluptatum, rerum impedit! Rerum praesentium dicta
-                  cum aut tempore! Perferendis error tempore sint dolorem
-                  dicta."
-                </p>
-                <span class="clients__who"
-                  >- Ebony verty,
-                  <strong class="clients__who--strong">Envato</strong>
-                </span>
-              </div>
-              <div class="clients__list">
-                <ion-icon
-                  name="chatbubbles-outline"
-                  class="clients__icon"
-                ></ion-icon>
-                <img src="./img/testi-1.jpg" alt="img" class="clients__img" />
-                <p class="clients__speak">
-                  "Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Reprehenderit cum labore necessitatibus adipisci ea
-                  voluptates. Voluptatum, rerum impedit! Rerum praesentium dicta
-                  cum aut tempore! Perferendis error tempore sint dolorem
-                  dicta."
-                </p>
-                <span class="clients__who"
-                  >- Ebony verty,
-                  <strong class="clients__who--strong">Envato</strong>
-                </span>
-              </div>
-              <div class="clients__list">
-                <ion-icon
-                  name="chatbubbles-outline"
-                  class="clients__icon"
-                ></ion-icon>
-                <img src="./img/testi-1.jpg" alt="img" class="clients__img" />
-                <p class="clients__speak">
-                  "Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Reprehenderit cum labore necessitatibus adipisci ea
-                  voluptates. Voluptatum, rerum impedit! Rerum praesentium dicta
-                  cum aut tempore! Perferendis error tempore sint dolorem
-                  dicta."
-                </p>
-                <span class="clients__who"
-                  >- Ebony verty,
-                  <strong class="clients__who--strong">Envato</strong>
-                </span>
-              </div>
+          <div class="clients__listBox">
+            <div class="clients__list">
+              <ion-icon
+                name="chatbubbles-outline"
+                class="clients__icon"
+              ></ion-icon>
+              <img src="./img/testi-1.jpg" alt="img" class="clients__img" />
+              <p class="clients__speak">
+                "Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Reprehenderit cum labore necessitatibus adipisci ea voluptates.
+                Voluptatum, rerum impedit! Rerum praesentium dicta cum aut
+                tempore! Perferendis error tempore sint dolorem dicta."
+              </p>
+              <span class="clients__who"
+                >- Ebony verty,
+                <strong class="clients__who--strong">Envato</strong>
+              </span>
+            </div>
+            <div class="clients__list">
+              <ion-icon
+                name="chatbubbles-outline"
+                class="clients__icon"
+              ></ion-icon>
+              <img src="./img/testi-1.jpg" alt="img" class="clients__img" />
+              <p class="clients__speak">
+                "Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Reprehenderit cum labore necessitatibus adipisci ea voluptates.
+                Voluptatum, rerum impedit! Rerum praesentium dicta cum aut
+                tempore! Perferendis error tempore sint dolorem dicta."
+              </p>
+              <span class="clients__who"
+                >- Ebony verty,
+                <strong class="clients__who--strong">Envato</strong>
+              </span>
+            </div>
+            <div class="clients__list">
+              <ion-icon
+                name="chatbubbles-outline"
+                class="clients__icon"
+              ></ion-icon>
+              <img src="./img/testi-1.jpg" alt="img" class="clients__img" />
+              <p class="clients__speak">
+                "Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Reprehenderit cum labore necessitatibus adipisci ea voluptates.
+                Voluptatum, rerum impedit! Rerum praesentium dicta cum aut
+                tempore! Perferendis error tempore sint dolorem dicta."
+              </p>
+              <span class="clients__who"
+                >- Ebony verty,
+                <strong class="clients__who--strong">Envato</strong>
+              </span>
             </div>
           </div>
-          <ul class="clients__controlBox">
-            <li
-              class="clients__control clients__control--action"
-              data-cn="0"
-            ></li>
-            <li class="clients__control" data-cn="1"></li>
-            <li class="clients__control" data-cn="2"></li>
-          </ul>
         </div>
       </section>
       <!-- portfolio-->
@@ -330,19 +322,19 @@
           </p>
           <ul class="portfolio__listBox">
             <li class="portfolio__list">
-              <a classhref="">ALL</a>
+              <a href="#none">ALL</a>
             </li>
             <li class="portfolio__list" data-w="seo">
-              <a href="">SEO</a>
+              <a href="#none">SEO</a>
             </li>
             <li class="portfolio__list" data-w="webdesign">
-              <a href="">WEBDESIGN</a>
+              <a href="#none">WEBDESIGN</a>
             </li>
             <li class="portfolio__list" data-w="work">
-              <a href="">WORK</a>
+              <a href="#none">WORK</a>
             </li>
             <li class="portfolio__list" data-w="wordpress">
-              <a href="">WORDPRESS</a>
+              <a href="#none">WORDPRESS</a>
             </li>
           </ul>
           <ul class="portfolio__photoListBox">
@@ -352,7 +344,7 @@
             >
               <img
                 src="./img/1.jpg"
-                alt="#"
+                alt="#none"
                 class="portfolio__photoList--img"
               />
               <div class="portfolio__detail">
@@ -363,7 +355,7 @@
             <li class="portfolio__photoList seo webdesign work">
               <img
                 src="./img/2.jpg"
-                alt="#"
+                alt="#none"
                 class="portfolio__photoList--img"
               />
               <div class="portfolio__detail">
@@ -374,7 +366,7 @@
             <li class="portfolio__photoList seo wordpress">
               <img
                 src="./img/3.jpg"
-                alt="#"
+                alt="#none"
                 class="portfolio__photoList--img"
               />
               <div class="portfolio__detail">
@@ -385,7 +377,7 @@
             <li class="portfolio__photoList webdesign work wordpress">
               <img
                 src="./img/4.jpg"
-                alt="#"
+                alt="#none"
                 class="portfolio__photoList--img"
               />
               <div class="portfolio__detail">
@@ -396,7 +388,7 @@
             <li class="portfolio__photoList seo webdesign">
               <img
                 src="./img/5.jpg"
-                alt="#"
+                alt="#none"
                 class="portfolio__photoList--img"
               />
               <div class="portfolio__detail">
@@ -407,7 +399,7 @@
             <li class="portfolio__photoList webdesign">
               <img
                 src="./img/6.jpg"
-                alt="#"
+                alt="#none"
                 class="portfolio__photoList--img"
               />
               <div class="portfolio__detail">
@@ -431,40 +423,40 @@
           </p>
           <ul class="blog__listBox">
             <li class="blog__list">
-              <img src="./img/blog-1.jpg" alt="#" class="blog__list--img" />
+              <img src="./img/blog-1.jpg" alt="#none" class="blog__list--img" />
               <h3 class="blog__list--name">There are many variations</h3>
-              <time class="blog__list--time"
-                >11 March 2018<strong>By Kerri</strong></time
+              <time class="blog__list--time" datetime="2018-03-11"
+                >11.3.2018</time
               >
               <p class="blog__list--content">
                 Sit sagittis vulputate laoreet sodales tortor nulla lobortis
                 bibendum netus primis fames. Lobortis ultricies.
               </p>
-              <a href="" class="blog__list--more">Read More...</a>
+              <a href="#none" class="blog__list--more">Read More...</a>
             </li>
             <li class="blog__list">
-              <img src="./img/blog-2.jpg" alt="#" class="blog__list--img" />
+              <img src="./img/blog-2.jpg" alt="#none" class="blog__list--img" />
               <h3 class="blog__list--name">Contrary to popular belief</h3>
-              <time class="blog__list--time"
-                >11 March 2018<strong>By Kerri</strong></time
+              <time class="blog__list--time" datetime="2018-03-11"
+                >11.3.2018</time
               >
               <p class="blog__list--content">
                 Sit sagittis vulputate laoreet sodales tortor nulla lobortis
                 bibendum netus primis fames. Lobortis ultricies.
               </p>
-              <a href="" class="blog__list--more">Read More...</a>
+              <a href="#none" class="blog__list--more">Read More...</a>
             </li>
             <li class="blog__list">
-              <img src="./img/blog-3.jpg" alt="#" class="blog__list--img" />
+              <img src="./img/blog-3.jpg" alt="#none" class="blog__list--img" />
               <h3 class="blog__list--name">Lorem Ipsum is not simply</h3>
-              <time class="blog__list--time"
-                >11 March 2018<strong>By Kerri</strong></time
+              <time class="blog__list--time" datetime="2018-03-11"
+                >11.3.2018</time
               >
               <p class="blog__list--content">
                 Sit sagittis vulputate laoreet sodales tortor nulla lobortis
                 bibendum netus primis fames. Lobortis ultricies.
               </p>
-              <a href="" class="blog__list--more">Read More...</a>
+              <a href="#none" class="blog__list--more">Read More...</a>
             </li>
           </ul>
         </div>
@@ -505,13 +497,12 @@
                 class="contact__list--icon"
               ></ion-icon>
               <h3 class="contact__list--detail">Visit Office</h3>
-              <addess class="contact__list--address"
-                >202, Grasselli Street , Conway.</addess
+              <span class="contact__list--address"
+                >202, Grasselli Street , Conway.</span
               >
             </li>
           </ul>
-
-          <form action="" class="contact__form">
+          <form action="#" class="contact__form">
             <fieldset>
               <legend class="indent">contact</legend>
               <div class="contact__form--box">
@@ -561,51 +552,42 @@
     <footer class="footer">
       <ul class="footer__sns">
         <li>
-          <a href="">
+          <a href="#none">
             <ion-icon name="logo-dribbble" class="footer__sns--icon"></ion-icon
             ><span class="indent">dribbble</span>
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="#none">
             <ion-icon name="logo-facebook" class="footer__sns--icon"></ion-icon
             ><span class="indent">facebook</span>
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="#none">
             <ion-icon name="logo-linkedin" class="footer__sns--icon"></ion-icon
             ><span class="indent">instagram</span>
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="#none">
             <ion-icon name="logo-twitter" class="footer__sns--icon"></ion-icon
             ><span class="indent">twitter</span>
           </a>
         </li>
       </ul>
-      <p class="footer__content">2018 - 2020 © Kerri. Design by SRBThemes.</p>
+      <span class="footer__content"
+        >2018 - 2020 © Kerri. Design by SRBThemes.</span
+      >
     </footer>
 
-    <!-- 사이드메뉴 -->
-    <div class="aside">
-      <div class="aside__container">
-        <button type="button" class="aside__btn">
-          <span> <</span>
-        </button>
-        <h2></h2>
-        <ul class="aside__list">
-          <li class="aside__list--link">Home</li>
-          <li class="aside__list--link">About</li>
-          <li class="aside__list--link">Services</li>
-          <li class="aside__list--link">Client</li>
-          <li class="aside__list--link">portfolio</li>
-          <li class="aside__list--link">Blog</li>
-          <li class="aside__list--link">Contact</li>
-        </ul>
-      </div>
-    </div>
+    <!-- jquery JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- slick JS -->
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- ionicons JS(아이콘) -->
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <!-- JS -->
+    <script src="./js/main.js"></script>
   </body>
 </html>
